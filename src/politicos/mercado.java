@@ -1,5 +1,5 @@
 package politicos;
 
-public class mercado {
+public class Mercado {
 
 }
