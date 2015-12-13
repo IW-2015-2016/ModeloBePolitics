@@ -1,12 +1,51 @@
 package politicos;
 
+import modificadores.ModificadorProduccion;
+
+/**
+ * Esta clase representa un político. 
+ * @author Ismael
+ *
+ */
 public class Politico {
+	//Orden: {HONESTIDAD,CARISMA,ELOCUENCIA,POPULARIDAD}
 	private int stats[];
 	private String nombre;
 	private String cita;
-	//{HONESTIDAD,CARISMA,ELOCUENCIA,POPULARIDAD}
+	private ModificadorProduccion modificador;
+	
+	
+	/*********************/
+	/****CONSTRUCTORES****/
+	/*********************/
+	
+	/**
+	 * Constructor con todos los parámetros
+	 * @param nombre el nombre
+	 * @param honestidad honestidad del 0 al 100
+	 * @param carisma carisma del 0 al 100
+	 * @param elocuencia elocuencia del 0 al 100
+	 * @param popularidad apoyo popular del 0 al 100
+	 * @param quote algo célebre dicho por el político
+	 * @param mod un modificador que será clonado para evitar errores de modificacion indeseables.
+	 * @throws ExceptionPolitico Lanza exception cuando los valores no están en el intervalo cerrado [0,100]
+	 */
+	public Politico(String nombre, int honestidad, int carisma, int elocuencia, int popularidad, String quote, ModificadorProduccion mod) throws ExceptionPolitico{
+		this.setNombre(nombre);
+		int i=0;
+		this.getStats()[i++] = honestidad;
+		this.getStats()[i++] = carisma;
+		this.getStats()[i++] = elocuencia;
+		this.getStats()[i++] = popularidad;
+		this.modificador =  mod.clone();
+		this.setCita(quote);
+		
+		for(i=0; i < StatsPolitico.getNumStats(); i++)
+			if(this.stats[i]< 0 || this.stats[i]>100)
+				throw new ExceptionPolitico();
+	}
 		/**
-		 * Constructor con todos los parámetros
+		 * Constructor con todos los parámetros menos el modificador de produccion
 		 * @param nombre el nombre
 		 * @param honestidad honestidad del 0 al 100
 		 * @param carisma carisma del 0 al 100
@@ -28,9 +67,9 @@ public class Politico {
 				if(this.stats[i]< 0 || this.stats[i]>100)
 					throw new ExceptionPolitico();
 		}
-		
+
 		/**
-		 * Constructor con todos los parámetros menos la cita
+		 * Constructor con todos los parámetros menos la cita y el modificador de producción
 		 * @param nombre el nombre
 		 * @param honestidad honestidad del 0 al 100
 		 * @param carisma carisma del 0 al 100
@@ -50,6 +89,41 @@ public class Politico {
 				if(this.stats[i]< 0 || this.stats[i]>100)
 					throw new ExceptionPolitico();
 		}
+		/**
+		 * Constructor con todos los parámetros menos la cita
+		 * @param nombre el nombre
+		 * @param honestidad honestidad del 0 al 100
+		 * @param carisma carisma del 0 al 100
+		 * @param elocuencia elocuencia del 0 al 100
+		 * @param popularidad apoyo popular del 0 al 100
+		 * @throws ExceptionPolitico Lanza exception cuando los valores no están en el intervalo cerrado [0,100]
+		 */
+		public Politico(String nombre, int honestidad, int carisma, int elocuencia, int popularidad, ModificadorProduccion mod) throws ExceptionPolitico{
+			this.setNombre(nombre);
+			int i=0;
+			this.getStats()[i++] = honestidad;
+			this.getStats()[i++] = carisma;
+			this.getStats()[i++] = elocuencia;
+			this.getStats()[i++] = popularidad;
+			this.modificador =  mod.clone();
+			
+			for(i=0; i < StatsPolitico.getNumStats(); i++)
+				if(this.stats[i]< 0 || this.stats[i]>100)
+					throw new ExceptionPolitico();
+		}
+		
+		/*******************************************/
+		/*********Fin de los constructores**********/
+		/*******************************************/
+		
+		
+		
+	
+		/**********************************/
+		/********Getters y setters*********/
+		/**********************************/
+		
+		
 		/**
 		 * Establece un stat sólamente, indicado por "tipo", el valor debe estar entre 0 y 100 o el cambio no se efectuará y
 		 * será lanzada una excepción
@@ -75,7 +149,7 @@ public class Politico {
 			case POPULARIDAD:
 				this.stats[3] = valor;
 				break;
-		}
+			}
 		}
 		
 		public int getSingleStat(StatsPolitico tipo){
@@ -99,7 +173,13 @@ public class Politico {
 			return ret;
 		}
 		
+		public ModificadorProduccion getModificador(){
+			return this.modificador;
+		}
 		
+		public void setModificadorProduccion(ModificadorProduccion mod){
+			this.modificador = mod;
+		}
 		
 		public void setCita(String cita){
 			this.cita=cita;
