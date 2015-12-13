@@ -41,7 +41,6 @@ public class ModificadorProduccion {
 	/**Getters y setters**/
 	/*********************/
 	
-	
 	private TipoRecurso getTipo() {
 		return tipo;
 	}
