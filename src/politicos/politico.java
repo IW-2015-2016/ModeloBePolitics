@@ -50,6 +50,56 @@ public class Politico {
 				if(this.stats[i]< 0 || this.stats[i]>100)
 					throw new ExceptionPolitico();
 		}
+		/**
+		 * Establece un stat sólamente, indicado por "tipo", el valor debe estar entre 0 y 100 o el cambio no se efectuará y
+		 * será lanzada una excepción
+		 * @param tipo el tipo de stat
+		 * @param valor el valor, debe estar entre 0 y 100
+		 * @return true si se ha realizado, false en caso contrario
+		 * @throws ExceptionPolitico lanza una excepción si el valor es menos que 0 o mayor que 100 
+		 */
+		public void setSingleStat(StatsPolitico tipo, int valor) throws ExceptionPolitico{
+			if(valor< 0 || valor>100)
+				throw new ExceptionPolitico();
+			
+			switch(tipo){
+			case HONESTIDAD:
+				this.stats[0] = valor;
+				break;
+			case CARISMA:
+				this.stats[1] = valor;
+				break;
+			case ELOCUENCIA:
+				this.stats[2] = valor;
+				break;
+			case POPULARIDAD:
+				this.stats[3] = valor;
+				break;
+		}
+		}
+		
+		public int getSingleStat(StatsPolitico tipo){
+			int ret=-1;
+			
+			switch(tipo){
+				case HONESTIDAD:
+					ret = this.stats[0];
+					break;
+				case CARISMA:
+					ret = this.stats[1];
+					break;
+				case ELOCUENCIA:
+					ret = this.stats[2];
+					break;
+				case POPULARIDAD:
+					ret = this.stats[3];
+					break;
+			}
+			
+			return ret;
+		}
+		
+		
 		
 		public void setCita(String cita){
 			this.cita=cita;
@@ -59,6 +109,8 @@ public class Politico {
 			return this.cita;
 		}
 
+		
+		
 		private int[] getStats() {
 			return stats;
 		}
