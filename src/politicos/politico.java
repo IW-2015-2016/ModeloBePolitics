@@ -3,9 +3,14 @@ package politicos;
 import modificadores.ModificadorProduccion;
 
 /**
- * Esta clase representa un político. 
+ * Esta clase representa un político. Sus stats deben estar siempre entre 0 y 100 y para ello
+ * hay un nuevo tipo de excepción que lo representa. también está íntimamente relacionado con 
+ * el enumerado StatsPolítico 
+ * 
+ * 
  * @author Ismael
- *
+ * @see ExcepcionPolitico
+ * @see StatsPolítico
  */
 public class Politico {
 	//Orden: {HONESTIDAD,CARISMA,ELOCUENCIA,POPULARIDAD}
@@ -135,7 +140,7 @@ public class Politico {
 		public void setSingleStat(StatsPolitico tipo, int valor) throws ExceptionPolitico{
 			if(valor< 0 || valor>100)
 				throw new ExceptionPolitico();
-			
+			/*El orden siempre es {HONESTIDAD,CARISMA,ELOCUENCIA,POPULARIDAD}*/
 			switch(tipo){
 			case HONESTIDAD:
 				this.stats[0] = valor;
@@ -154,7 +159,7 @@ public class Politico {
 		
 		public int getSingleStat(StatsPolitico tipo){
 			int ret=-1;
-			
+			/*El orden siempre es {HONESTIDAD,CARISMA,ELOCUENCIA,POPULARIDAD}*/
 			switch(tipo){
 				case HONESTIDAD:
 					ret = this.stats[0];
