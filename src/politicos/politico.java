@@ -64,10 +64,20 @@ public class Politico {
 		}
 
 		private void setStats(int stats[]) {
+			try {
+				
 			for(int i=0; i < StatsPolitico.getNumStats(); i++)
 				if(stats[i]< 0 || stats[i]>100)
-					throw new ExceptionPolitico();
-			this.stats = stats;
+						throw new ExceptionPolitico();
+						
+				this.stats = stats;
+				
+			} catch (ExceptionPolitico e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+					
+			
 		}
 
 		private String getNombre() {
