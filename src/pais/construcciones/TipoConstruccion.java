@@ -1,6 +1,6 @@
 package pais.construcciones;
 
-public enum TiposConstruccion {
+public enum TipoConstruccion {
 	MINISTERIO_DE_INDUSTRIA,
 	MINISTERIO_DE_EDUCACION,
 	BOLSA_DE_VALORES,
@@ -21,7 +21,7 @@ public enum TiposConstruccion {
 	 * 6 = PROMOTORAS_INMOBILIARIAS,
 	 * 7 = CONFERENCIA_EPISCOPAL
 	 */
-	public static int getOrden(TiposConstruccion t){
+	public static int getIndex(TipoConstruccion t){
 		int ret=-1;
 		switch(t){
 		case MINISTERIO_DE_INDUSTRIA:
@@ -51,4 +51,42 @@ public enum TiposConstruccion {
 		}
 		return ret;
 	}
+	
+	/**
+	 * Devuelve el nombre de los tipos de construccion recibiendo un enumerado
+	 * 
+	 * @param t el tipo de construccion
+	 * @return un string con el nombre del tipo de construccion
+	 */
+	public static String getNombre(TipoConstruccion t){
+		String ret="";
+		switch(t){
+		case MINISTERIO_DE_INDUSTRIA:
+			ret="Ministerio de industria";
+			break;
+		case MINISTERIO_DE_EDUCACION:
+			ret="Ministerio de educación";
+			break;
+		case BOLSA_DE_VALORES:
+			ret="Bolsa de valores";
+			break;
+		case MINISTERIO_DE_ECONOMIA:
+			ret="Ministerio de economía";
+			break;
+		case MINISTERIO_DE_JUSTICIA:
+			ret="Ministerio de Justicia";
+			break;
+		case MINISTERIO_DE_SANIDAD:
+			ret="Ministerio de Sanidad";
+			break;
+		case PROMOTORAS_INMOBILIARIAS:
+			ret="Promotoras inmobiliarias";
+			break;
+		case CONFERENCIA_EPISCOPAL:
+			ret="Conferencia Episcopal";
+			break;
+		}
+		return ret;
+	}
+	
 }
