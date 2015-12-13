@@ -1,5 +1,7 @@
 package modificadores;
 
+import java.sql.Date;
+
 import pais.TipoRecurso;
 
 public class ModificadorProduccion {
@@ -7,19 +9,69 @@ public class ModificadorProduccion {
 	private int porcentaje;
 	private String titulo;
 	private String descripcion;
+	private Date fechainicio;
+	private Date fechafin;
 	/**
 	 * Crea un Modificador
 	 * @param t el tipo de recurso
 	 * @param porcent el porcentaje que modifica
 	 * @param titulo el título del modificador
 	 * @param descripcion la descripción del modificador
+	 * @param inicio aquí va la fecha de inicio (java.sql.Date)
+	 * @param fin aquí va la fecha de fin (java.sql.Date)
 	 */
-	public ModificadorProduccion(TipoRecurso t, int porcent, String titulo, String descripcion){
-		this.porcentaje = porcent;
+	public ModificadorProduccion(TipoRecurso t, int porcent, String titulo, String descripcion, Date inicio, Date fin){
+		this.setPorcentaje(porcent);
 		if(porcent<-100 || porcent>100) 
-			this.porcentaje = 0;
-		this.titulo = titulo;
-		this.descripcion = descripcion;
-		
+			this.setPorcentaje(0);
+		this.setTitulo(titulo);
+		this.setDescripcion(descripcion);
+		this.setFechainicio(inicio);
+		this.setFechafin(fin);
 	}
+	
+	
+	/*********************/
+	/**Getters y setters**/
+	/*********************/
+	
+	
+	private TipoRecurso getTipo() {
+		return tipo;
+	}
+	private void setTipo(TipoRecurso tipo) {
+		this.tipo = tipo;
+	}
+	private int getPorcentaje() {
+		return porcentaje;
+	}
+	private void setPorcentaje(int porcentaje) {
+		this.porcentaje = porcentaje;
+	}
+	private Date getFechainicio() {
+		return fechainicio;
+	}
+	private void setFechainicio(Date fechainicio) {
+		this.fechainicio = fechainicio;
+	}
+	private Date getFechafin() {
+		return fechafin;
+	}
+	private void setFechafin(Date fechafin) {
+		this.fechafin = fechafin;
+	}
+	private String getTitulo() {
+		return titulo;
+	}
+	private void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+	private String getDescripcion() {
+		return descripcion;
+	}
+	private void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	
 }
