@@ -30,6 +30,12 @@ public class ModificadorProduccion {
 		this.setFechafin(fin);
 	}
 	
+	/**
+	 * Clona el modificador de producción actual.
+	 */
+	public ModificadorProduccion clone(){
+		return new ModificadorProduccion(this.tipo,this.porcentaje, this.titulo,this.descripcion,this.fechainicio,this.fechafin);
+	}
 	
 	/*********************/
 	/**Getters y setters**/
