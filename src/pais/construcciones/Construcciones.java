@@ -3,7 +3,7 @@ package pais.construcciones;
 import pais.TipoRecurso;
 import politicos.Politico;
 
-public class Construccion {
+public class Construcciones {
 	private String nombre;
 	private TipoRecurso rec;
 	private int nivel;
@@ -20,14 +20,14 @@ public class Construccion {
 	 * @param nombre
 	 * @param rec
 	 */
-	public Construccion(String nombre, TipoRecurso rec){
+	public Construcciones(String nombre, TipoRecurso rec){
 		this.nombre = nombre;
 		this.rec = rec;
 		this.nivel = 1;
 		this.produccion_hora = 5;
 	}
 	
-	public Construccion(String nombre, TipoRecurso rec, int multiplicadorProduccion, int multiplicadorCoste){
+	public Construcciones(String nombre, TipoRecurso rec, int multiplicadorProduccion, int multiplicadorCoste){
 		this.nombre = nombre;
 		this.rec = rec;
 		this.nivel = 1;

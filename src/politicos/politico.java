@@ -37,15 +37,16 @@ public class Politico {
 	 */
 	public Politico(String nombre, int honestidad, int carisma, int elocuencia, int popularidad, String quote, ModificadorProduccion mod) throws ExceptionPolitico{
 		this.setNombre(nombre);
-		int i=0;
-		this.getStats()[i++] = honestidad;
-		this.getStats()[i++] = carisma;
-		this.getStats()[i++] = elocuencia;
-		this.getStats()[i++] = popularidad;
+
+		this.stats[StatsPolitico.getIndex(StatsPolitico.HONESTIDAD)] = honestidad;
+		this.stats[StatsPolitico.getIndex(StatsPolitico.CARISMA)] = carisma;
+		this.stats[StatsPolitico.getIndex(StatsPolitico.ELOCUENCIA)] = elocuencia;
+		this.stats[StatsPolitico.getIndex(StatsPolitico.POPULARIDAD)] = popularidad;
+		
 		this.modificador =  mod.clone();
 		this.setCita(quote);
 		
-		for(i=0; i < StatsPolitico.getNumStats(); i++)
+		for(int i=0; i < StatsPolitico.getNumStats(); i++)
 			if(this.stats[i]< 0 || this.stats[i]>100)
 				throw new ExceptionPolitico();
 	}
@@ -61,14 +62,16 @@ public class Politico {
 		 */
 		public Politico(String nombre, int honestidad, int carisma, int elocuencia, int popularidad, String quote) throws ExceptionPolitico{
 			this.setNombre(nombre);
-			int i=0;
-			this.getStats()[i++] = honestidad;
-			this.getStats()[i++] = carisma;
-			this.getStats()[i++] = elocuencia;
-			this.getStats()[i++] = popularidad;
+
+
+			this.stats[StatsPolitico.getIndex(StatsPolitico.HONESTIDAD)] = honestidad;
+			this.stats[StatsPolitico.getIndex(StatsPolitico.CARISMA)] = carisma;
+			this.stats[StatsPolitico.getIndex(StatsPolitico.ELOCUENCIA)] = elocuencia;
+			this.stats[StatsPolitico.getIndex(StatsPolitico.POPULARIDAD)] = popularidad;
+			
 			this.setCita(quote);
 			
-			for(i=0; i < StatsPolitico.getNumStats(); i++)
+			for(int i=0; i < StatsPolitico.getNumStats(); i++)
 				if(this.stats[i]< 0 || this.stats[i]>100)
 					throw new ExceptionPolitico();
 		}
@@ -84,13 +87,14 @@ public class Politico {
 		 */
 		public Politico(String nombre, int honestidad, int carisma, int elocuencia, int popularidad) throws ExceptionPolitico{
 			this.setNombre(nombre);
-			int i=0;
-			this.getStats()[i++] = honestidad;
-			this.getStats()[i++] = carisma;
-			this.getStats()[i++] = elocuencia;
-			this.getStats()[i++] = popularidad;
+		
+			this.stats[StatsPolitico.getIndex(StatsPolitico.HONESTIDAD)] = honestidad;
+			this.stats[StatsPolitico.getIndex(StatsPolitico.CARISMA)] = carisma;
+			this.stats[StatsPolitico.getIndex(StatsPolitico.ELOCUENCIA)] = elocuencia;
+			this.stats[StatsPolitico.getIndex(StatsPolitico.POPULARIDAD)] = popularidad;
+
 			
-			for(i=0; i < StatsPolitico.getNumStats(); i++)
+			for(int i=0; i < StatsPolitico.getNumStats(); i++)
 				if(this.stats[i]< 0 || this.stats[i]>100)
 					throw new ExceptionPolitico();
 		}
@@ -105,14 +109,15 @@ public class Politico {
 		 */
 		public Politico(String nombre, int honestidad, int carisma, int elocuencia, int popularidad, ModificadorProduccion mod) throws ExceptionPolitico{
 			this.setNombre(nombre);
-			int i=0;
-			this.getStats()[i++] = honestidad;
-			this.getStats()[i++] = carisma;
-			this.getStats()[i++] = elocuencia;
-			this.getStats()[i++] = popularidad;
+
+			this.stats[StatsPolitico.getIndex(StatsPolitico.HONESTIDAD)] = honestidad;
+			this.stats[StatsPolitico.getIndex(StatsPolitico.CARISMA)] = carisma;
+			this.stats[StatsPolitico.getIndex(StatsPolitico.ELOCUENCIA)] = elocuencia;
+			this.stats[StatsPolitico.getIndex(StatsPolitico.POPULARIDAD)] = popularidad;
+			
 			this.modificador =  mod.clone();
 			
-			for(i=0; i < StatsPolitico.getNumStats(); i++)
+			for(int i=0; i < StatsPolitico.getNumStats(); i++)
 				if(this.stats[i]< 0 || this.stats[i]>100)
 					throw new ExceptionPolitico();
 		}
@@ -141,20 +146,9 @@ public class Politico {
 			if(valor< 0 || valor>100)
 				throw new ExceptionPolitico();
 			/*El orden siempre es {HONESTIDAD,CARISMA,ELOCUENCIA,POPULARIDAD}*/
-			switch(tipo){
-			case HONESTIDAD:
-				this.stats[0] = valor;
-				break;
-			case CARISMA:
-				this.stats[1] = valor;
-				break;
-			case ELOCUENCIA:
-				this.stats[2] = valor;
-				break;
-			case POPULARIDAD:
-				this.stats[3] = valor;
-				break;
-			}
+			
+			this.stats[StatsPolitico.getIndex(tipo)] = valor;
+			
 		}
 		
 		public int getSingleStat(StatsPolitico tipo){

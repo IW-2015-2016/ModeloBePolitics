@@ -36,20 +36,9 @@ public class Recursos {
 	 * @return la cantidad de recurso que hay, -1 en caso de fallo
 	 */
 	public int getRecurso(TipoRecurso r){
-		switch(r){
-			case PIB:
-				return this.resources[0];
-			case APOYO_POPULAR:
-				return this.resources[1];
-			case ENERGIA:
-				return this.resources[2];
-			case POBLACION:
-				return this.resources[3];
-		}
-		
-		return -1;
-		
+		return this.resources[TipoRecurso.getIndice(r)];
 	}
+	
 	public int getPIB(){
 		return getRecurso(TipoRecurso.PIB);
 	}
@@ -70,16 +59,7 @@ public class Recursos {
 	 * @param cantidad
 	 */
 	public void sumaRecurso(TipoRecurso r, int cantidad){
-		switch(r){
-			case PIB:
-				this.resources[0] +=cantidad;
-			case APOYO_POPULAR:
-				this.resources[1] +=cantidad;
-			case ENERGIA:
-				this.resources[2] +=cantidad;
-			case POBLACION:
-				this.resources[3] +=cantidad;
-		}
+			this.resources[TipoRecurso.getIndice(r)] +=cantidad;
 	}
 	
 	
