@@ -3,7 +3,15 @@ package pais;
 import java.io.IOException;
 
 /**
- * Indica los tipos de recurso que puede tener un pais
+ * Indica los tipos de recurso que puede tener un pais, son en este orden:
+ * 0 = PIB
+ * 1 = APOYO_POPULAR
+ * 2 = ENERGIA
+ * 3 = POBLACION
+ * 
+ * Existen métodos para obtener la cantidad de recursos y los índices de cada Tipo del enumerado. 
+ * También se puede obtener el enumerado por el índice.
+ * 
  * @author Ismael
  *
  */

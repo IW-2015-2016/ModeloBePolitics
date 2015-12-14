@@ -13,7 +13,7 @@ public enum TipoConstruccion {
          * Devuelve el número de construcciones que hay
          * @return el número máximo de construcciones
          */
-        public static int getNum(){
+        public static int getNumConstrucciones(){
             return 8;
         }
 	/**
@@ -97,7 +97,7 @@ public enum TipoConstruccion {
         
         public static TipoConstruccion getConstruccion(int idx){
             TipoConstruccion ret = null;
-            if(idx >= 0 && idx < TipoConstruccion.getNum())
+            if(idx >= 0 && idx < TipoConstruccion.getNumConstrucciones())
 		switch(idx){
 		case 0:
 			ret = MINISTERIO_DE_INDUSTRIA;

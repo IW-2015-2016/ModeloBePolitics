@@ -3,7 +3,9 @@ package pais;
 import java.util.Random;
 
 /**
- * Los recursos van en este orden:
+ * La clase simboliza los recursos que hay. Se puede a�adir algo de un tipo de recurso y restar.
+ * Para restar hay que sumar una cantidad negativa.
+ * Los recursos van en el mismo orden que TipoRecurso:
  * 
  * PIB,
  * APOYO_POPULAR,
@@ -11,6 +13,7 @@ import java.util.Random;
  * POBLACION
  * 
  * @author Ismael
+ * @see TipoRecurso
  *
  */
 public class Recursos {
@@ -26,10 +29,7 @@ public class Recursos {
 			this.resources[i] = minimo;
 		}
 	}
-	
-	
-	
-	
+
 	/**
 	 * Obtiene la cantidad de un recurso que tiene la clase
 	 * @param r el recurso a obtener
@@ -38,15 +38,15 @@ public class Recursos {
 	public int getRecurso(TipoRecurso r){
 		return getRecurso(TipoRecurso.getIndice(r));
 	}
-        /**
-         * Devuelve el recurso por su índice
-         * @param idx el índice del recurso, debe estar entre 0 y Tipo
-         * @return -1 si el índice no es correcto, la cantidad del recurso en otro caso
-         */
-        public int getRecurso(int idx){
-            if(idx < 0 || idx >= TipoRecurso.getNumTipoRecursos()) return -1;
-            return this.resources[idx];
-        }
+    /**
+     * Devuelve el recurso por su índice
+     * @param idx el índice del recurso, debe estar entre 0 y Tipo
+     * @return -1 si el índice no es correcto, la cantidad del recurso en otro caso
+     */
+    public int getRecurso(int idx){
+        if(idx < 0 || idx >= TipoRecurso.getNumTipoRecursos()) return -1;
+        return this.resources[idx];
+    }
 	
 	public int getPIB(){
 		return getRecurso(TipoRecurso.PIB);

@@ -4,10 +4,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import pais.Pais;
+import pais.eventos.EventosGuerra;
 
 public class Guerra {
-	
-	private ArrayList<Pais> paises;
+	/* Tuplas de (Pais, eventos)*/
+	private ArrayList<Pair<Pais, EventosGuerra>> guerrasYEventos;
 	private Pais propietario;
 	/**
 	 * Se debe entregar el país al que pertenece la alianza
@@ -16,7 +17,7 @@ public class Guerra {
 	 * @throws IOException si el país está vacío
 	 */
 	public Guerra(Pais pais) throws IOException{
-		this.paises = new ArrayList<Pais>();
+		this.guerrasYEventos = new ArrayList<Pair<Pais,EventosGuerra>>();
 		if (pais == null) throw new IOException();
 		this.propietario = pais;
 		
@@ -37,8 +38,13 @@ public class Guerra {
 	 */
 	public boolean entrarEnGuerra(Pais p) throws IOException{
 		if(p==null) throw new IOException();
-		if (this.paises.contains(p)) return false;
-		return this.paises.add(p);
+		
+		//Crea un par para buscar el pa�s
+		Pair<Pais, EventosGuerra> par = new Pair<Pais, EventosGuerra>(p,null);
+		
+		if (this.guerrasYEventos.contains(par)) return false;
+		par.setRight(new EventosGuerra());
+		return this.guerrasYEventos.add(par);
 	}
 	/**
 	 * Acaba una guerra
@@ -46,22 +52,25 @@ public class Guerra {
 	 * @return true si se acaba la guerra, false si no existe o no se puede borrar
 	 */
 	public boolean acabaGuerra(Pais p){
-		if(!this.paises.contains(p)){
+		Pair<Pais, EventosGuerra> par = new Pair<Pais, EventosGuerra>(p,null);
+		if(!this.guerrasYEventos.contains(par)){
 			return false;
 		}
-		if(this.paises.remove(p)){
+		if(this.guerrasYEventos.remove(par)){
 			//TODO añadir a los paises eventos de eliminación de la alianza en tiempo x
 			
 			return true;
 		}
 		return false;
 	}
+	
 	/**
 	 * Comprueba si un país está en guerra con este
 	 * @param p el país
 	 * @return true si es enemigo, false en caso contrario
 	 */
 	public boolean esEnemigo(Pais p){
-		return this.paises.contains(p);
+		Pair<Pais, EventosGuerra> par = new Pair<Pais, EventosGuerra>(p,null);
+		return this.guerrasYEventos.contains(par);
 	}
 }
