@@ -80,41 +80,41 @@ con la api estándar de Java
 
 # COSAS HECHAS(No es seguro que estén completas, hay que darle una vuelta)
 # {
--[Ismael = (I), Bea = (B), Julia = (J), Sehed = (S)]
+-[Ismael = **(I)**, Bea = **(B)**, Julia = **(J)**, Sehed = **(S)**]
 
--ModificadorProduccion (I) //No su uso, sino el propio modificador
+-ModificadorProduccion **(I)** //No su uso, sino el propio modificador
 
--TipoRecurso (I) 
+-TipoRecurso **(I)** 
 
--Recursos (I)
+-Recursos **(I)**
 
--Construcciones (I)
+-Construcciones **(I)**
 
--TipoConstruccion (I)
+-TipoConstruccion **(I)**
 
--Pair (I[tomado de un australiano y citada la fuente]) //UNa clase que he pillado
+-Pair **(I[tomado de un australiano y citada la fuente])** //UNa clase que he pillado
 
--ExceptionPolitico (I)
+-ExceptionPolitico **(I)**
 
--Politico (I)
+-Politico **(I)**
 
--StatsPolitico (I)
+-StatsPolitico **(I)**
 
 # }
 
 # COSAS EMPEZADAS
 # {
--Guerras (I) //Lleva bastante
+-Guerras **(I)** //Lleva bastante
 
--Paises (I) //Empezado, muy poco
+-Paises **(I)** //Empezado, muy poco
 
--ComunidadEconomica (I) //Ni recuerdo cuánto lleva
+-ComunidadEconomica **(I)** //Ni recuerdo cuánto lleva
 
--Genero (I) //Los tres siguientes no sé si habrá que añadirles métodos o como enumerados simples valen
+-Genero **(I)** //Los tres siguientes no sé si habrá que añadirles métodos o como enumerados simples valen
 
--Rol (I)
+-Rol **(I)**
 
--TipoLider (I)
+-TipoLider **(I)**
 
 # }
 
