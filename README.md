@@ -1,6 +1,7 @@
 # ModeloBePolitics, el modelo para la aplicación
 
-# INDICACIONES SOBRE GITHUB{
+# INDICACIONES SOBRE GITHUB
+# {
 -Aquí tenéis el programa, por si os interesa
 
 -https://desktop.github.com/
@@ -16,7 +17,9 @@
 -Si queréis currar, haced una nueva rama, la modificáis y luego se hace un merge
 
 # }
-# GUíA DE FUNCIONAMIENTO DE GITHUB{
+
+# GUíA DE FUNCIONAMIENTO DE GITHUB
+# {
 -Para cuando queráis usar git os indico:
 
 -SIEMPRE CREÁIS UNA RAMA NUEVA y la llamáis como os salga del potorro
@@ -35,7 +38,8 @@
     
 # }
 
-# AGOBIOS DE ISMAEL{
+# AGOBIOS DE ISMAEL
+# {
 -Del modelo queda mazo y el tiempo empieza a apremiar. De STS también queda mazo
 
 -Dijo el Manuel que antes de vacaciones pondría una entrega...
@@ -54,7 +58,8 @@
 
 # }
 
-# COSAS QUE SEGURAMENTE HAYA QUE HACER{
+# COSAS QUE SEGURAMENTE HAYA QUE HACER
+# {
 -Lo más seguro es que la base de datos haya que reformarla, porque no sé si va a valer con el programa, por diseño he cambiado un par de cosas y eso tiene que estar reflejado
 
 -Va a haber que hacer clases que permitan la carga desde la base de datos
@@ -65,14 +70,16 @@
 
 # }
 
-# COSAS SOBRE LA APLICACION{
+# COSAS SOBRE LA APLICACION
+# {
 -He añadido bastante documentación a todo por si os diera por trabajar en ello algún día, que veáis qué mierdas hace cada cosa. 
 He guardado el formato de javadoc para que si llamáis a un método mío, os invoque el javadoc en el compilador como 
 con la api estándar de Java
 
 # }
 
-# COSAS HECHAS(No es seguro que estén completas, hay que darle una vuelta){
+# COSAS HECHAS(No es seguro que estén completas, hay que darle una vuelta)
+# {
 -[Ismael = (I), Bea = (B), Julia = (J), Sehed = (S)]
 
 -ModificadorProduccion (I) //No su uso, sino el propio modificador
@@ -95,14 +102,13 @@ con la api estándar de Java
 
 # }
 
-# COSAS EMPEZADAS{
+# COSAS EMPEZADAS
+# {
 -Guerras (I) //Lleva bastante
 
 -Paises (I) //Empezado, muy poco
 
 -ComunidadEconomica (I) //Ni recuerdo cuánto lleva
-
--Usuario (I) //No vale para nada, hay que borrarlo entero.
 
 -Genero (I) //Los tres siguientes no sé si habrá que añadirles métodos o como enumerados simples valen
 
@@ -112,14 +118,8 @@ con la api estándar de Java
 
 # }
 
-# COSAS QUE HABRÁ QUE BORRAR{
--Alianzas
-
--Aliarse
-
-#}
-
-# COSAS QUE HAY QUE HACER DESDE CERO{
+# COSAS QUE HAY QUE HACER DESDE CERO
+# {
  -Usuario //Está pero hay que borrarla
  
  -EventoComunidadEconomica
