@@ -3,7 +3,14 @@ package modificadores;
 import java.sql.Date;
 
 import pais.TipoRecurso;
-
+/**
+ * Modificadores a la producción. contienen un tipo de recurso, un porcentaje, un título,
+ * una descripción, y una fecha de inicio y otra de fin. tienen como objetivo almacenar
+ * las modificaciones de producción que sufre un país por cualquier motivo.
+ * 
+ * @author Ismael
+ * @see Date
+ */
 public class ModificadorProduccion {
 	private TipoRecurso tipo;
 	private int porcentaje;
@@ -12,13 +19,16 @@ public class ModificadorProduccion {
 	private Date fechainicio;
 	private Date fechafin;
 	/**
-	 * Crea un Modificador
+	 * Crea un Modificador. si el porcentaje no está entre -100 y 100, se pondrá automáticamente a 0
+	 *  
 	 * @param t el tipo de recurso
 	 * @param porcent el porcentaje que modifica
 	 * @param titulo el título del modificador
 	 * @param descripcion la descripción del modificador
 	 * @param inicio aquí va la fecha de inicio (java.sql.Date)
 	 * @param fin aquí va la fecha de fin (java.sql.Date)
+	 * 
+	 * @see java.sql.Date
 	 */
 	public ModificadorProduccion(TipoRecurso t, int porcent, String titulo, String descripcion, Date inicio, Date fin){
 		this.setPorcentaje(porcent);

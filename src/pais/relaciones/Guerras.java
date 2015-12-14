@@ -5,7 +5,17 @@ import java.util.ArrayList;
 
 import pais.Pais;
 import pais.eventos.EventosGuerra;
-
+/**
+ * Representa todas las guerras que tiene un país. Permite la creación de nuevas guerras y la finalización.
+ * cada guerra tiene asociada una clase EventosGuerra que contendrá todos los eventos de esa guerra pasados
+ * y el evento activo
+ * 
+ * @author Ismael
+ * @see Pair<L,R>
+ * @see Pais
+ * @see EventosGuerra
+ *
+ */
 public class Guerras {
 	/* Tuplas de (Pais, eventos)*/
 	private ArrayList<Pair<Pais, EventosGuerra>> guerrasYEventos;
