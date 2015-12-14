@@ -8,9 +8,6 @@
 -Y una microguía
 
 -https://rogerdudler.github.io/git-guide/index.es.html
-  
-  
--Ismael
 
 -El cliente propio de github está para win y mac, lo siento Bea, vas a tener que buscar tu propia interfaz gráfica
 
