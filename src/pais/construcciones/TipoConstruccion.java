@@ -9,7 +9,13 @@ public enum TipoConstruccion {
 	MINISTERIO_DE_SANIDAD,
 	PROMOTORAS_INMOBILIARIAS,
 	CONFERENCIA_EPISCOPAL;
-	
+	/**
+         * Devuelve el nÃºmero de construcciones que hay
+         * @return el nÃºmero mÃ¡ximo de construcciones
+         */
+        public static int getNum(){
+            return 8;
+        }
 	/**
 	 * Devuelve el orden de 0 a 7 de los distintos tipos de construccion
 	 * 0 = MINISTERIO_DE_INDUSTRIA,
@@ -65,13 +71,13 @@ public enum TipoConstruccion {
 			ret="Ministerio de industria";
 			break;
 		case MINISTERIO_DE_EDUCACION:
-			ret="Ministerio de educación";
+			ret="Ministerio de educaciï¿½n";
 			break;
 		case BOLSA_DE_VALORES:
 			ret="Bolsa de valores";
 			break;
 		case MINISTERIO_DE_ECONOMIA:
-			ret="Ministerio de economía";
+			ret="Ministerio de economï¿½a";
 			break;
 		case MINISTERIO_DE_JUSTICIA:
 			ret="Ministerio de Justicia";
@@ -88,5 +94,37 @@ public enum TipoConstruccion {
 		}
 		return ret;
 	}
+        
+        public static TipoConstruccion getConstruccion(int idx){
+            TipoConstruccion ret = null;
+            if(idx >= 0 && idx < TipoConstruccion.getNum())
+		switch(idx){
+		case 0:
+			ret = MINISTERIO_DE_INDUSTRIA;
+			break;
+		case 1:
+			ret=MINISTERIO_DE_EDUCACION;
+			break;
+		case 2:
+			ret=BOLSA_DE_VALORES;
+			break;
+		case 3:
+			ret=MINISTERIO_DE_ECONOMIA;
+			break;
+		case 4:
+			ret=MINISTERIO_DE_JUSTICIA;
+			break;
+		case 5:
+			ret=MINISTERIO_DE_SANIDAD;
+			break;
+		case 6:
+			ret=PROMOTORAS_INMOBILIARIAS;
+			break;
+		case 7:
+			ret=CONFERENCIA_EPISCOPAL;
+			break;
+		}
+		return ret;
+        }
 	
 }

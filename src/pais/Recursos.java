@@ -17,7 +17,7 @@ public class Recursos {
 	private int resources[];
 	private static final int minimo = 10;
 	/**
-	 * Inicializa los recursos al m�nimo
+	 * Inicializa los recursos al m�nimo
 	 */
 	public Recursos(){
 		this.resources = new int[TipoRecurso.getNumTipoRecursos()];
@@ -36,8 +36,17 @@ public class Recursos {
 	 * @return la cantidad de recurso que hay, -1 en caso de fallo
 	 */
 	public int getRecurso(TipoRecurso r){
-		return this.resources[TipoRecurso.getIndice(r)];
+		return getRecurso(TipoRecurso.getIndice(r));
 	}
+        /**
+         * Devuelve el recurso por su índice
+         * @param idx el índice del recurso, debe estar entre 0 y Tipo
+         * @return -1 si el índice no es correcto, la cantidad del recurso en otro caso
+         */
+        public int getRecurso(int idx){
+            if(idx < 0 || idx >= TipoRecurso.getNumTipoRecursos()) return -1;
+            return this.resources[idx];
+        }
 	
 	public int getPIB(){
 		return getRecurso(TipoRecurso.PIB);
