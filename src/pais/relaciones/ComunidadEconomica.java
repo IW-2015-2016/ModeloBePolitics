@@ -47,7 +47,7 @@ public class ComunidadEconomica {
 	 */
 	public boolean esLider(Pais p){
 		return this.admin.contains(p);
-	}afs
+	}
 	
 	/**
 	 * Un lider invitara a un miembro. Si quien invita no es lider,

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import pais.Pais;
 import pais.eventos.EventosGuerra;
 
-public class Guerra {
+public class Guerras {
 	/* Tuplas de (Pais, eventos)*/
 	private ArrayList<Pair<Pais, EventosGuerra>> guerrasYEventos;
 	private Pais propietario;
@@ -16,7 +16,7 @@ public class Guerra {
 	 * @param pais el pais que posee la lista de alianzas
 	 * @throws IOException si el país está vacío
 	 */
-	public Guerra(Pais pais) throws IOException{
+	public Guerras(Pais pais) throws IOException{
 		this.guerrasYEventos = new ArrayList<Pair<Pais,EventosGuerra>>();
 		if (pais == null) throw new IOException();
 		this.propietario = pais;

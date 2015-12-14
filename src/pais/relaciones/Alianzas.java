@@ -11,7 +11,7 @@ import pais.Pais;
  * @author Ismael
  *
  */
-public class Alianza {
+public class Alianzas {
 	private ArrayList<Pais> paises;
 	private Pais propietario;
 	/**
@@ -20,7 +20,7 @@ public class Alianza {
 	 * @param pais el pais que posee la lista de alianzas
 	 * @throws IOException si el pais esta¡ vacio
 	 */
-	public Alianza(Pais pais) throws IOException{
+	public Alianzas(Pais pais) throws IOException{
 		this.paises = new ArrayList<Pais>();
 		if (pais == null) throw new IOException();
 		this.propietario = pais;

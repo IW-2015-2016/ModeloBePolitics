@@ -1,7 +1,12 @@
 package pais;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
+import pais.construcciones.Construcciones;
+import pais.relaciones.Alianzas;
+import pais.relaciones.ComunidadEconomica;
+import pais.relaciones.Guerras;
 import politicos.Politico;
 /**
  * Representa un país
@@ -13,8 +18,30 @@ public class Pais {
 	private Recursos recursos;
 	private int id;
 	private String nombre;
+	private Guerras guerra;
+	private Construcciones construcciones;
+	private ComunidadEconomica comunidad;
+	private Alianzas alianzas;
 	
-	
+	public Pais(String nom) {
+		this.nombre = nom;
+		//TODO autogenerar el ID
+		try {
+			this.guerra = new Guerras(this);
+			this.alianzas = new Alianzas(this);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		this.construcciones = new Construcciones();
+		
+		
+		this.comunidad=null;
+		
+		
+		
+		
+	}
 	
 	
 	/**
