@@ -1,4 +1,4 @@
-# ModeloBePolitics, el modelo para la aplicación
+# BePolitics, anotaciones sobre el modelo
 
 # INDICACIONES SOBRE GITHUB
 # {
